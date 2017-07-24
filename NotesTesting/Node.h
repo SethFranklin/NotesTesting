@@ -1,6 +1,8 @@
 
 #pragma once
 
+#include <vector>
+
 namespace Tree
 {
 
@@ -17,6 +19,9 @@ namespace Tree
 
 		Node* Insert(int NewValue);
 		Node* Search(int SearchValue);
+		unsigned int GetSize();
+		unsigned int GetDepth();
+		std::vector<int> OrderedList();
 
 	};
 

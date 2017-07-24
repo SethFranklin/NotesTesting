@@ -1,5 +1,8 @@
 
 #include <iostream>
+#include <cstdlib>
+#include <vector>
+#include <algorithm>
 
 #include "Main.h"
 #include "Output.h"
@@ -8,18 +11,40 @@
 void Main::Start()
 {
 
-	Output::PrintString("test");
-	Output::PrintValue<float>("value", 25.4f);
-	Output::PrintValue<int>("value", 23);
+	std::vector<int> Unrandomized, Randomized;
 
-	Tree::Node RootNode = Tree::Node(5);
-	RootNode.Insert(3);
-	RootNode.Insert(2);
-	RootNode.Insert(1);
+	for (int Index = 1; Index <= 100; Index++)
+	{
 
-	//delete RootNode.Search(1);
+		Unrandomized.push_back(Index);
 
-	Output::PrintValue<int>("a", RootNode.Search(1)->Value);
+	}
+
+	while (Unrandomized.size() > 0)
+	{
+
+		int Number = Unrandomized[rand() % int(Unrandomized.size())];
+
+		Randomized.push_back(Number);
+		Unrandomized.erase(std::remove(Unrandomized.begin(), Unrandomized.end(), Number), Unrandomized.end());
+
+	}
+
+	Output::PrintString("Unsorted random numbers");
+	Output::PrintVector(Randomized);
+	Output::ContinuePrompt();
+	Output::PrintString("Sorted random numbers");
+
+	Tree::Node RootNode = Tree::Node(Randomized[0]);
+
+	for (int Index = 1; Index < int(Randomized.size()); Index++)
+	{
+
+		RootNode.Insert(Randomized[Index]);
+
+	}
+
+	Output::PrintVector(RootNode.OrderedList());
 
 	Output::ContinuePrompt();
 
