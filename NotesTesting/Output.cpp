@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "Output.h"
+#include "Vector3.h"
 
 void Output::PrintString(char StringToPrint[])
 {
@@ -44,5 +45,12 @@ void Output::PrintVector(std::vector<int> List)
 	}
 
 	std::cout << std::endl;
+
+}
+
+void Output::PrintVector(Math::Vector3 VectorToPrint)
+{
+
+	std::cout << "(" << VectorToPrint.X << ", " << VectorToPrint.Y << ", " << VectorToPrint.Z << ")" << std::endl;
 
 }
