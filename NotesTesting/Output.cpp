@@ -3,6 +3,7 @@
 
 #include "Output.h"
 #include "Vector3.h"
+#include <string>
 
 void Output::PrintString(char StringToPrint[])
 {
@@ -11,7 +12,19 @@ void Output::PrintString(char StringToPrint[])
 
 }
 
+void Output::PrintString(std::string StringToPrint)
+{
 
+	std::cout << StringToPrint << std::endl;
+
+}
+
+void Output::PrintChar(char CharToPrint)
+{
+
+	std::cout << CharToPrint << std::endl;
+
+}
 
 template <class Number> void Output::PrintValue(char ValueName[], Number Value)
 {
@@ -52,5 +65,18 @@ void Output::PrintVector(Math::Vector3 VectorToPrint)
 {
 
 	std::cout << "(" << VectorToPrint.X << ", " << VectorToPrint.Y << ", " << VectorToPrint.Z << ")" << std::endl;
+
+}
+
+std::string Output::GetString(std::string Name)
+{
+
+	std::cout << Name << ": ";
+
+	std::string Return;
+
+	std::getline(std::cin, Return);
+
+	return Return;
 
 }

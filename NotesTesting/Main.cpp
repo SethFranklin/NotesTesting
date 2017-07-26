@@ -8,8 +8,26 @@
 #include "Output.h"
 #include "Node.h"
 #include "Vector3.h"
+#include "Parse.h"
+
+void OrderTest();
+void VectorTest();
 
 void Main::Start()
+{
+
+	while (true)
+	{
+
+		Output::PrintValue("Simplified", Parse::MathExpression(Output::GetString("Expression")));
+
+		Output::ContinuePrompt();
+
+	};
+
+}
+
+void VectorTest()
 {
 
 	Math::Vector3 test1 = Math::Vector3(0, 1, 2);
@@ -30,8 +48,6 @@ void Main::Start()
 	test2 += Math::Vector3(1, 1, 1);
 	Output::PrintVector(test2);
 
-	Output::ContinuePrompt();
-
 }
 
 void OrderTest()
@@ -39,7 +55,7 @@ void OrderTest()
 
 	std::vector<int> Unrandomized, Randomized;
 
-	for (int Index = 1; Index <= 100; Index++)
+	for (int Index = 1; Index <= 1000; Index++)
 	{
 
 		Unrandomized.push_back(Index);
@@ -58,6 +74,7 @@ void OrderTest()
 
 	Output::PrintString("Unsorted random numbers");
 	Output::PrintVector(Randomized);
+	Output::PrintString("Unsorted random numbers");
 	Output::ContinuePrompt();
 	Output::PrintString("Sorted random numbers");
 
@@ -71,5 +88,7 @@ void OrderTest()
 	}
 
 	Output::PrintVector(RootNode.OrderedList());
+
+	Output::PrintString("Sorted random numbers");
 
 }

@@ -30,6 +30,12 @@
     <ClCompile Include="Vector3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Parse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -42,6 +48,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Vector3.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parse.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathNode.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
