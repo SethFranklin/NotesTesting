@@ -12,20 +12,20 @@ enum NodeType
 
 };
 
-struct MathNode
+class MathNode
 {
+
+public:
 
 	MathNode(std::string Expression);
 	~MathNode();
 
 	void FormTree();
-	void SimplifyTree();
+	float SimplifyTree();
 
-	NodeType Type;
-	std::string Contents;
-	float Number;
+private:
 
-	MathNode* Left; // Binary tree
-	MathNode* Right;
+	class Impl_;
+	Impl_* Impl;
 
 };

@@ -61,6 +61,21 @@ void Output::PrintVector(std::vector<int> List)
 
 }
 
+void Output::PrintVector(std::vector<float> List)
+{
+
+	for (int Index = 0; Index < List.size(); Index++)
+	{
+
+		std::cout << List[Index];
+		if (Index != List.size() - 1) std::cout << ", ";
+
+	}
+
+	std::cout << std::endl;
+
+}
+
 void Output::PrintVector(Math::Vector3 VectorToPrint)
 {
 

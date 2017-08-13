@@ -12,8 +12,16 @@
 
 void OrderTest();
 void VectorTest();
+void MathTest();
 
 void Main::Start()
+{
+
+	OrderTest();
+
+}
+
+void MathTest()
 {
 
 	while (true)
@@ -53,9 +61,9 @@ void VectorTest()
 void OrderTest()
 {
 
-	std::vector<int> Unrandomized, Randomized;
+	std::vector<float> Unrandomized, Randomized;
 
-	for (int Index = 1; Index <= 1000; Index++)
+	for (float Index = 0.0; Index <= 1.0; Index += 0.001)
 	{
 
 		Unrandomized.push_back(Index);
@@ -65,7 +73,7 @@ void OrderTest()
 	while (Unrandomized.size() > 0)
 	{
 
-		int Number = Unrandomized[rand() % int(Unrandomized.size())];
+		float Number = Unrandomized[rand() % int(Unrandomized.size())];
 
 		Randomized.push_back(Number);
 		Unrandomized.erase(std::remove(Unrandomized.begin(), Unrandomized.end(), Number), Unrandomized.end());
@@ -78,7 +86,7 @@ void OrderTest()
 	Output::ContinuePrompt();
 	Output::PrintString("Sorted random numbers");
 
-	Tree::Node RootNode = Tree::Node(Randomized[0]);
+	Tree::Node<float> RootNode = Tree::Node<float>(Randomized[0]);
 
 	for (int Index = 1; Index < int(Randomized.size()); Index++)
 	{
@@ -90,5 +98,6 @@ void OrderTest()
 	Output::PrintVector(RootNode.OrderedList());
 
 	Output::PrintString("Sorted random numbers");
+	Output::ContinuePrompt();
 
 }

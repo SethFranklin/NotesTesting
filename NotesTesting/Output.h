@@ -15,6 +15,7 @@ namespace Output
 	template <class Number> void PrintValue(char ValueName[], Number Value);
 	void ContinuePrompt();
 	void PrintVector(std::vector<int> List);
+	void PrintVector(std::vector<float> List);
 	void PrintVector(Math::Vector3 VectorToPrint);
 	std::string GetString(std::string Name);
 
